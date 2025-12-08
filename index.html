@@ -2,118 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ECE VI Sem Timetable</title>
+  <title>VI Sem ECE – Section III</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-
-  <script>
-    window.onload = function () {
-      const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-      const today = days[new Date().getDay()];
-      const todayCol = document.getElementById(today);
-      if (todayCol) todayCol.classList.add("today");
-    };
-  </script>
 </head>
 
 <body>
+  <div class="container">
+    <h1>VI Sem ECE – Section III</h1>
+    <h3>Academic Year: 2025–26</h3>
+    <p><b>Class Teacher:</b> Mrs. P.R. Sri Satya | w.e.f. 08-12-2025</p>
 
-<h1>VI Sem ECE – Section III</h1>
-<p class="sub">Academic Year: 2025–26</p>
-<p class="sub">Class Teacher: <b>Mrs. P.R. Sri Satya</b> | w.e.f. 08-12-2025</p>
+    <table>
+      <tr>
+        <th>TIME</th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+      </tr>
 
-<table>
-  <thead>
-    <tr>
-      <th>TIME</th>
-      <th id="mon">MON</th>
-      <th id="tue">TUE</th>
-      <th id="wed">WED</th>
-      <th id="thu">THU</th>
-      <th id="fri">FRI</th>
-    </tr>
-  </thead>
+      <tr>
+        <td>08:40–09:30</td>
+        <td class="sub-mw">Microwave</td>
+        <td class="sub-mpmc">MPMC</td>
+        <td class="sub-pe">PE-II</td>
+        <td class="sub-pe">PE-II</td>
+        <td class="sub-ci">Constitution</td>
+      </tr>
 
-  <tbody>
-    <tr>
-      <td>08:40–09:30</td>
-      <td class="subj microwave">Microwave</td>
-      <td class="subj mpmc">MPMC</td>
-      <td class="subj pe">PE-II</td>
-      <td class="subj pe">PE-II</td>
-      <td class="subj constitution">Constitution</td>
-    </tr>
+      <tr>
+        <td>09:30–10:20</td>
+        <td class="sub-ccn">CCN</td>
+        <td class="sub-ccn">CCN</td>
+        <td class="sub-lab">MPMC/MW Lab</td>
+        <td class="sub-mpmc">MPMC</td>
+        <td class="sub-mw">Microwave</td>
+      </tr>
 
-    <tr>
-      <td>09:30–10:20</td>
-      <td class="subj ccn">CCN</td>
-      <td class="subj ccn">CCN</td>
-      <td class="subj lab">MPMC/MW Lab</td>
-      <td class="subj mpmc">MPMC</td>
-      <td class="subj microwave">Microwave</td>
-    </tr>
+      <tr>
+        <td>10:20–11:10</td>
+        <td class="sub-pe">PE-II</td>
+        <td class="sub-mw">Microwave</td>
+        <td class="sub-lab">MPMC/MW Lab</td>
+        <td class="sub-mw">Microwave</td>
+        <td class="sub-ccn">CCN</td>
+      </tr>
 
-    <tr>
-      <td>10:20–11:10</td>
-      <td class="subj pe">PE-II</td>
-      <td class="subj microwave">Microwave</td>
-      <td class="subj lab">MPMC/MW Lab</td>
-      <td class="subj microwave">Microwave</td>
-      <td class="subj ccn">CCN</td>
-    </tr>
+      <tr class="lunch">
+        <td>11:10–12:00</td>
+        <td colspan="5">LUNCH</td>
+      </tr>
 
-    <tr class="lunch">
-      <td>11:10–12:00</td>
-      <td colspan="5">LUNCH</td>
-    </tr>
+      <tr>
+        <td>12:00–12:50</td>
+        <td class="sub-mpmc">MPMC</td>
+        <td class="sub-lab">CCN Lab</td>
+        <td class="sub-ccn">CCN</td>
+        <td class="sub-lab">MPMC/MW Lab</td>
+        <td class="sub-lab">Soft Skills Lab</td>
+      </tr>
 
-    <tr>
-      <td>12:00–12:50</td>
-      <td class="subj mpmc">MPMC</td>
-      <td class="subj lab">CCN Lab</td>
-      <td class="subj ccn">CCN</td>
-      <td class="subj lab">MPMC/MW Lab</td>
-      <td class="subj soft">Soft Skills Lab</td>
-    </tr>
+      <tr>
+        <td>12:50–01:40</td>
+        <td class="sub-ci">Constitution</td>
+        <td class="sub-lab">CCN Lab</td>
+        <td class="sub-mpmc">MPMC</td>
+        <td class="sub-lab">MPMC/MW Lab</td>
+        <td class="sub-oe">Open Elective-II</td>
+      </tr>
 
-    <tr>
-      <td>12:50–01:40</td>
-      <td class="subj constitution">Constitution</td>
-      <td class="subj lab">CCN Lab</td>
-      <td class="subj mpmc">MPMC</td>
-      <td class="subj lab">MPMC/MW Lab</td>
-      <td class="subj open">Open Elective-II</td>
-    </tr>
+      <tr>
+        <td>01:40–02:30</td>
+        <td class="sub-lib">Library</td>
+        <td class="sub-pe">PE-II</td>
+        <td class="sub-oe">Open Elective-II</td>
+        <td class="sub-oe">Open Elective-II</td>
+        <td class="sub-oe">Open Elective-II</td>
+      </tr>
 
-    <tr>
-      <td>01:40–02:30</td>
-      <td class="subj library">Library</td>
-      <td class="subj pe">PE-II</td>
-      <td class="subj open">Open Elective-II</td>
-      <td class="subj open">Open Elective-II</td>
-      <td class="subj honors">Honors</td>
-    </tr>
+      <!-- ✅ CORRECTED SLOT -->
+      <tr>
+        <td>02:30–03:20</td>
+        <td class="sub-sports">Sports</td>
+        <td class="sub-oe">Open / PE-II</td>
+        <td class="sub-oe">Open / PE-II</td>
+        <td class="sub-oe">Open / PE-II</td>
+        <td class="sub-oe">Open Elective-II</td>
+      </tr>
 
-    <tr>
-      <td>02:30–03:20</td>
-      <td class="subj sports">Sports</td>
-      <td class="subj honors">Honors</td>
-      <td class="subj honors">Honors</td>
-      <td class="subj honors">Honors</td>
-      <td class="subj honors">Honors</td>
-    </tr>
+      <!-- ✅ HONORS ONLY AFTER 3:20 -->
+      <tr>
+        <td>03:20–04:10</td>
+        <td class="sub-hon">Honors</td>
+        <td class="sub-hon">Honors</td>
+        <td class="sub-hon">Honors</td>
+        <td class="sub-hon">Honors</td>
+        <td class="sub-hon">Honors (MOOCs)</td>
+      </tr>
 
-    <tr>
-      <td>03:20–04:10</td>
-      <td class="subj honors">Honors</td>
-      <td class="subj honors">Honors</td>
-      <td class="subj honors">Honors</td>
-      <td class="subj honors">Honors</td>
-      <td class="subj honors">Honors</td>
-    </tr>
-  </tbody>
-</table>
-
+    </table>
+  </div>
 </body>
 </html>
+
 
