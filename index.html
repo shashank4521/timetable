@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ECE VI Sem Timetable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>VI Sem ECE – Section III</h1>
+<h3>Academic Year: 2025–26</h3>
+<p class="start">Class Teacher: Mrs. P.R. Sri Satya | w.e.f. 08-12-2025</p>
+
+<table>
+  <tr>
+    <th>TIME</th>
+    <th>MON</th>
+    <th>TUE</th>
+    <th>WED</th>
+    <th>THU</th>
+    <th>FRI</th>
+  </tr>
+
+  <tr>
+    <td>08:40–09:30</td>
+    <td class="microwave">Microwave Eng</td>
+    <td class="mpmc">MPMC</td>
+    <td class="pe">PE-II</td>
+    <td class="pe">PE-II</td>
+    <td class="constitution">Constitution</td>
+  </tr>
+
+  <tr>
+    <td>09:30–10:20</td>
+    <td class="ccn">CCN</td>
+    <td class="ccn">CCN</td>
+    <td class="lab">MPMC/MW Lab</td>
+    <td class="mpmc">MPMC</td>
+    <td class="microwave">Microwave</td>
+  </tr>
+
+  <tr>
+    <td>10:20–11:10</td>
+    <td class="pe">PE-II</td>
+    <td class="microwave">Microwave</td>
+    <td class="lab">MPMC/MW Lab</td>
+    <td class="microwave">Microwave</td>
+    <td class="ccn">CCN</td>
+  </tr>
+
+  <tr>
+    <td>11:10–12:00</td>
+    <td class="lunch">LUNCH</td>
+    <td class="lunch">LUNCH</td>
+    <td class="lunch">LUNCH</td>
+    <td class="lunch">LUNCH</td>
+    <td class="lunch">LUNCH</td>
+  </tr>
+
+  <tr>
+    <td>12:00–12:50</td>
+    <td class="mpmc">MPMC</td>
+    <td class="lab">CCN Lab</td>
+    <td class="ccn">CCN</td>
+    <td class="lab">MPMC/MW Lab</td>
+    <td class="lab">Soft Skills Lab</td>
+  </tr>
+
+  <tr>
+    <td>12:50–01:40</td>
+    <td class="constitution">Constitution</td>
+    <td class="lab">CCN Lab</td>
+    <td class="mpmc">MPMC</td>
+    <td class="lab">MPMC/MW Lab</td>
+    <td class="open">Open Elective-II</td>
+  </tr>
+
+  <tr>
+    <td>01:40–02:30</td>
+    <td class="library">Library</td>
+    <td class="pe">PE-II</td>
+    <td class="open">Open Elective-II</td>
+    <td class="open">Open Elective-II</td>
+    <td class="honors">Honors (MOOCs)</td>
+  </tr>
+
+  <tr>
+    <td>02:30–03:20</td>
+    <td class="sports">Sports</td>
+    <td class="honors">Honors</td>
+    <td class="honors">Honors</td>
+    <td class="honors">Honors</td>
+    <td class="honors">Honors</td>
+  </tr>
+
+</table>
+
+<script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
