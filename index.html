@@ -2,104 +2,358 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VI Sem ECE - Section III Timetable</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Timetable</title>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Timetable">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABmJLR0QA/wD/AP+gvaeTAAAAeElEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/BhwjAABHQ8NuAAAAABJRU5ErkJggg==" style="background-color: black;">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='50' height='100' fill='black'/%3E%3Crect x='50' width='50' height='100' fill='white'/%3E%3C/svg%3E">
+
+    <style>
+        /* Loading Fonts: Quicksand (Soft) and Inter (Clean) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Quicksand:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap');
+
+        /* ========================================= */
+        /* THEME: OMEGA (GIRL / PASTEL THEME)        */
+        /* ========================================= */
+        .theme-omega {
+            --bg-body: #fff0f5; /* Lavender Blush */
+            --bg-surface: #ffffff;
+            --text-main: #5d4037;
+            --text-muted: #9e827a;
+            --font-main: 'Quicksand', sans-serif;
+            --font-mono: 'Quicksand', sans-serif; /* Soft mono */
+
+            /* Subject Colors (Pastel) */
+            --c-core:   #ffe4e1; --b-core:   #ffb6c1; --t-core:   #c71585; /* Misty Rose */
+            --c-lab:    #e6e6fa; --b-lab:    #dda0dd; --t-lab:    #800080; /* Lavender */
+            --c-math:   #fffacd; --b-math:   #f0e68c; --t-math:   #b8860b; /* Lemon Chiffon */
+            --c-elec:   #f0fff0; --b-elec:   #98fb98; --t-elec:   #228b22; /* Honeydew */
+            --c-oe:     #f5f5f5; --b-oe:     #dcdcdc; --t-oe:     #696969; /* Grey */
+            --c-break:  #fffaf0; --b-break:  #ffdead; --t-break:  #d2691e; /* Floral White */
+
+            --active-btn-bg: #ff69b4;
+            --active-btn-text: #ffffff;
+            --header-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+        }
+
+        /* ========================================= */
+        /* THEME: ALPHA (CLEAN / TECH THEME)         */
+        /* ========================================= */
+        .theme-alpha {
+            --bg-body: #f1f5f9; /* Slate 100 */
+            --bg-surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Subject Colors (Tech) */
+            --c-core:   #e0f2fe; --b-core:   #38bdf8; --t-core:   #0369a1; /* Sky */
+            --c-lab:    #f3e8ff; --b-lab:    #c084fc; --t-lab:    #7e22ce; /* Purple */
+            --c-math:   #ecfdf5; --b-math:   #34d399; --t-math:   #047857; /* Emerald */
+            --c-elec:   #ffedd5; --b-elec:   #fb923c; --t-elec:   #c2410c; /* Orange */
+            --c-oe:     #f1f5f9; --b-oe:     #94a3b8; --t-oe:     #475569; /* Slate */
+            --c-break:  #f8fafc; --b-break:  #cbd5e1; --t-break:  #64748b; /* Grey */
+
+            --active-btn-bg: #0f172a;
+            --active-btn-text: #ffffff;
+            --header-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* BASE STYLES */
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body {
+            background-color: var(--bg-body); color: var(--text-main);
+            font-family: var(--font-main); margin: 0; padding: 20px;
+            display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+            padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%; max-width: 1600px; margin-bottom: 25px;
+            background: var(--bg-surface); padding: 15px 25px; border-radius: 20px;
+            box-shadow: var(--header-shadow);
+            display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+            transition: box-shadow 0.4s ease;
+        }
+
+        .header-info h1 { font-weight: 800; font-size: 1.2rem; margin: 0; letter-spacing: -0.5px; }
+        .header-info span { 
+            color: var(--text-muted); font-size: 0.8rem; font-weight: 600; 
+            margin-top: 4px; display: inline-block; opacity: 0.8;
+        }
+
+        /* SYMBOL SWITCHER */
+        .profile-toggle {
+            display: flex; gap: 10px; background: rgba(0,0,0,0.03); 
+            padding: 5px; border-radius: 50px;
+        }
+        .toggle-btn {
+            border: none; width: 45px; height: 45px; border-radius: 50%;
+            font-family: 'Times New Roman', serif; font-weight: 700; font-size: 1.5rem;
+            background: transparent; color: var(--text-muted); cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .toggle-btn.active { 
+            background: var(--active-btn-bg); color: var(--active-btn-text); 
+            transform: scale(1.1); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* TABLE CONTAINER */
+        .container {
+            width: 100%; max-width: 1600px; overflow-x: auto;
+            border-radius: 20px; background: var(--bg-surface); padding: 15px;
+            box-shadow: var(--header-shadow); scrollbar-width: none;
+        }
+        .container::-webkit-scrollbar { display: none; }
+
+        table { width: 100%; border-collapse: separate; border-spacing: 12px; min-width: 1200px; }
+        
+        /* HEADERS */
+        th {
+            text-align: left; padding: 10px; font-size: 0.75rem; color: var(--text-muted);
+            text-transform: uppercase; font-weight: 700; position: sticky; top: 0;
+            background: var(--bg-surface); z-index: 10; font-family: var(--font-mono);
+            border-bottom: 2px solid var(--bg-body);
+        }
+
+        /* CELLS */
+        td { vertical-align: top; height: 110px; width: 10%; padding: 0; }
+        
+        /* Day Column */
+        td:first-child { width: 50px; min-width: 50px; position: sticky; left: 0; z-index: 20; background: transparent; }
+        .day-circle {
+            background: var(--bg-body); color: var(--text-muted); height: 100%; width: 100%;
+            display: flex; align-items: center; justify-content: center; 
+            font-weight: 800; font-size: 0.9rem; letter-spacing: 1px;
+            border-radius: 12px; writing-mode: vertical-rl; transform: rotate(180deg);
+        }
+
+        /* CARDS */
+        .card {
+            background: #fff; border-radius: 16px; height: 100%;
+            padding: 12px; display: flex; flex-direction: column; justify-content: space-between;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+            position: relative; overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        /* Hover Effect */
+        .card:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); z-index: 5; }
+
+        /* Typography */
+        .subject { font-weight: 700; font-size: 0.85rem; line-height: 1.3; margin-bottom: 4px; }
+        .room-tag { 
+            align-self: flex-start; font-size: 0.7rem; font-weight: 700; 
+            padding: 4px 10px; border-radius: 20px; background: rgba(255,255,255,0.7); 
+            font-family: var(--font-mono); opacity: 0.9;
+        }
+
+        /* DYNAMIC COLOR CLASSES */
+        .t-core .card { background: var(--c-core); border: 2px solid var(--b-core); }
+        .t-core .subject { color: var(--t-core); } .t-core .room-tag { color: var(--t-core); }
+
+        .t-lab .card { background: var(--c-lab); border: 2px solid var(--b-lab); }
+        .t-lab .subject { color: var(--t-lab); } .t-lab .room-tag { color: var(--t-lab); }
+
+        .t-math .card { background: var(--c-math); border: 2px solid var(--b-math); }
+        .t-math .subject { color: var(--t-math); } .t-math .room-tag { color: var(--t-math); }
+
+        .t-elec .card { background: var(--c-elec); border: 2px solid var(--b-elec); }
+        .t-elec .subject { color: var(--t-elec); } .t-elec .room-tag { color: var(--t-elec); }
+
+        .t-oe .card { background: var(--c-oe); border: 2px solid var(--b-oe); }
+        .t-oe .subject { color: var(--t-oe); } .t-oe .room-tag { color: var(--t-oe); }
+
+        .t-break .card { 
+            background: var(--c-break); border: 2px dashed var(--b-break);
+            justify-content: center; align-items: center; opacity: 0.7;
+        }
+        .t-break .subject { color: var(--t-break); text-align: center; font-style: italic; }
+
+        /* Active Day */
+        .active-day .day-circle { background: var(--active-btn-bg); color: #fff; }
+        .active-day { background-color: rgba(0,0,0,0.015); border-radius: 12px; }
+        .empty-card { height: 100%; border-radius: 12px; border: 2px dashed var(--b-oe); opacity: 0.3; }
+
+        /* View Logic */
+        .schedule-body { display: none; }
+        .schedule-body.active-view { display: table-row-group; }
+    </style>
 </head>
-<body>
+<body class="theme-omega">
 
-<h1>VI Sem ECE – Section III</h1>
-<h3>Academic Year: 2025–26</h3>
-<h4>Class Teacher: Mrs. P.R. Sri Satya | w.e.f. 08-12-2025</h4>
+    <header>
+        <div class="header-info">
+            <h1>Timetable</h1>
+            <span id="currentDate">Loading...</span>
+        </div>
+        
+        <div class="profile-toggle">
+            <button class="toggle-btn active" onclick="setProfile('omega')" id="btn-omega" title="Omega">Ω</button>
+            <button class="toggle-btn" onclick="setProfile('alpha')" id="btn-alpha" title="Alpha">α</button>
+        </div>
+    </header>
 
-<table>
-    <tr>
-        <th>Time</th>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-    </tr>
+    <div class="container">
+        <table>
+            <thead id="time-headers">
+                </thead>
+            
+            <tbody id="schedule-omega" class="schedule-body active-view">
+                <tr data-day="Monday">
+                    <td><div class="day-circle">MON</div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Microwave Engg</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Comp. Comm (CCN)</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-elec"><div class="card"><span class="subject">Elec. Measure (EMI)</span><span class="room-tag">B1-102</span></div></td>
+                    <td class="t-break"><div class="card"><span class="subject">LUNCH</span></div></td>
+                    <td class="t-math"><div class="card"><span class="subject">Microprocessors</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Const. of India</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Library</span></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Sports</span></div></td>
+                </tr>
+                <tr data-day="Tuesday">
+                    <td><div class="day-circle">TUE</div></td>
+                    <td class="t-math"><div class="card"><span class="subject">Microprocessors</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Comp. Comm (CCN)</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Microwave Engg</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-break"><div class="card"><span class="subject">LUNCH</span></div></td>
+                    <td colspan="3" class="t-lab"><div class="card"><span class="subject">Networking Lab</span><span class="room-tag">B2-303</span></div></td>
+                    <td class="t-elec"><div class="card"><span class="subject">Elec. Measure (EMI)</span><span class="room-tag">B1-102</span></div></td>
+                </tr>
+                <tr data-day="Wednesday">
+                    <td><div class="day-circle">WED</div></td>
+                    <td class="t-elec"><div class="card"><span class="subject">Elec. Measure (EMI)</span><span class="room-tag">B1-102</span></div></td>
+                    <td colspan="3" class="t-lab"><div class="card"><span class="subject">Micro/Microwave Lab</span><span class="room-tag">B2-304</span></div></td>
+                    <td class="t-break"><div class="card"><span class="subject">LUNCH</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Comp. Comm (CCN)</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-math"><div class="card"><span class="subject">Microprocessors</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Open Elective-II</span></div></td>
+                </tr>
+                <tr data-day="Thursday">
+                    <td><div class="day-circle">THU</div></td>
+                    <td class="t-elec"><div class="card"><span class="subject">Elec. Measure (EMI)</span><span class="room-tag">B1-102</span></div></td>
+                    <td class="t-math"><div class="card"><span class="subject">Microprocessors</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Microwave Engg</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-break"><div class="card"><span class="subject">LUNCH</span></div></td>
+                    <td colspan="3" class="t-lab"><div class="card"><span class="subject">Micro/Microwave Lab</span><span class="room-tag">B1-303</span></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Open Elective-II</span></div></td>
+                </tr>
+                <tr data-day="Friday">
+                    <td><div class="day-circle">FRI</div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Const. of India</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Microwave Engg</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Comp. Comm (CCN)</span><span class="room-tag">B1-203</span></div></td>
+                    <td class="t-break"><div class="card"><span class="subject">LUNCH</span></div></td>
+                    <td colspan="3" class="t-lab"><div class="card"><span class="subject">Soft Skills Lab</span><span class="room-tag">B6-303</span></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Open Elective-II</span></div></td>
+                </tr>
+            </tbody>
 
-    <tr>
-        <td>08:40 – 09:30</td>
-        <td>Microwave Engineering (22EC1121)</td>
-        <td>Microprocessors & Microcontrollers (22EC1120)</td>
-        <td>Professional Elective-II*</td>
-        <td>Professional Elective-II*</td>
-        <td>Constitution of India (22HM11Z2)</td>
-    </tr>
+            <tbody id="schedule-alpha" class="schedule-body">
+                <tr data-day="Monday">
+                    <td><div class="day-circle">MON</div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Critical Thinking</span><span class="room-tag">ICT 518</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Algorithms (DAA)</span><span class="room-tag">ICT 604</span></div></td>
+                    <td class="t-math"><div class="card"><span class="subject">Calculus</span><span class="room-tag">ICT 505</span></div></td>
+                    <td class="t-elec"><div class="card"><span class="subject">DBMS</span><span class="room-tag">ICT 218</span></div></td>
+                    <td><div class="empty-card"></div></td><td><div class="empty-card"></div></td>
+                    <td colspan="2" class="t-lab"><div class="card"><span class="subject">OS Lab</span><span class="room-tag">ICT 209</span></div></td>
+                    <td><div class="empty-card"></div></td>
+                </tr>
+                <tr data-day="Tuesday">
+                    <td><div class="day-circle">TUE</div></td>
+                    <td colspan="2" class="t-lab"><div class="card"><span class="subject">DBMS Lab</span><span class="room-tag">ICT 203</span></div></td>
+                    <td class="t-math"><div class="card"><span class="subject">Calculus</span><span class="room-tag">ICT 505</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">OS Theory</span><span class="room-tag">ICT 507</span></div></td>
+                    <td><div class="empty-card"></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Ops Research</span><span class="room-tag">CB 411</span></div></td>
+                    <td><div class="empty-card"></div></td><td><div class="empty-card"></div></td><td><div class="empty-card"></div></td>
+                </tr>
+                <tr data-day="Wednesday">
+                    <td><div class="day-circle">WED</div></td>
+                    <td colspan="2" class="t-lab"><div class="card"><span class="subject">DAA Lab</span><span class="room-tag">ICT 104</span></div></td>
+                    <td class="t-elec"><div class="card"><span class="subject">DBMS</span><span class="room-tag">ICT 517</span></div></td>
+                    <td class="t-math"><div class="card"><span class="subject">Calculus</span><span class="room-tag">ICT 505</span></div></td>
+                    <td><div class="empty-card"></div></td><td><div class="empty-card"></div></td><td><div class="empty-card"></div></td><td><div class="empty-card"></div></td><td><div class="empty-card"></div></td>
+                </tr>
+                <tr data-day="Thursday">
+                    <td><div class="day-circle">THU</div></td>
+                    <td class="t-core"><div class="card"><span class="subject">OS Theory</span><span class="room-tag">ICT 507</span></div></td>
+                    <td class="t-elec"><div class="card"><span class="subject">DBMS</span><span class="room-tag">ICT 517</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Algorithms (DAA)</span><span class="room-tag">ICT 111</span></div></td>
+                    <td class="t-math"><div class="card"><span class="subject">Calculus</span><span class="room-tag">ICT 505</span></div></td>
+                    <td><div class="empty-card"></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Ops Research</span><span class="room-tag">CB 411</span></div></td>
+                    <td><div class="empty-card"></div></td><td><div class="empty-card"></div></td><td><div class="empty-card"></div></td>
+                </tr>
+                <tr data-day="Friday">
+                    <td><div class="day-circle">FRI</div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Env. Studies</span><span class="room-tag">ICT 328</span></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Crit. Thinking</span><span class="room-tag">ICT 508</span></div></td>
+                    <td colspan="2" class="t-lab"><div class="card"><span class="subject">GCGC (Aptitude)</span><span class="room-tag">ICT 505</span></div></td>
+                    <td><div class="empty-card"></div></td>
+                    <td class="t-oe"><div class="card"><span class="subject">Ops Research</span><span class="room-tag">CB 411</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">OS Theory</span><span class="room-tag">ICT 507</span></div></td>
+                    <td class="t-core"><div class="card"><span class="subject">Algorithms (DAA)</span><span class="room-tag">ICT 105</span></div></td>
+                    <td><div class="empty-card"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <tr>
-        <td>09:30 – 10:20</td>
-        <td>Computer Communications & Networking (22EC1122)</td>
-        <td>Computer Communications & Networking (22EC1122)</td>
-        <td>MPMC / Microwave Lab</td>
-        <td>Microprocessors & Microcontrollers (22EC1120)</td>
-        <td>Microwave Engineering (22EC1121)</td>
-    </tr>
+    <script>
+        const headers = {
+            'omega': '<tr><th></th><th>08:40 - 09:30</th><th>09:30 - 10:20</th><th>10:20 - 11:10</th><th>11:10 - 12:00</th><th>12:00 - 12:50</th><th>12:50 - 01:40</th><th>01:40 - 02:30</th><th>02:30 - 03:20</th></tr>',
+            'alpha': '<tr><th></th><th>08:00 - 09:00</th><th>09:00 - 10:00</th><th>10:00 - 11:00</th><th>11:00 - 12:00</th><th>12:00 - 01:00</th><th>01:00 - 02:00</th><th>02:00 - 03:00</th><th>03:00 - 04:00</th><th>04:00 - 05:00</th></tr>'
+        };
 
-    <tr>
-        <td>10:20 – 11:10</td>
-        <td>Professional Elective-II*</td>
-        <td>Microwave Engineering (22EC1121)</td>
-        <td>Lab Continued</td>
-        <td>Microwave Engineering (22EC1121)</td>
-        <td>Computer Communications & Networking (22EC1122)</td>
-    </tr>
+        function setProfile(profile) {
+            localStorage.setItem('timetableProfileV4', profile);
 
-    <tr class="lunch">
-        <td>11:10 – 12:00</td>
-        <td colspan="5">LUNCH</td>
-    </tr>
+            // Update Body Class for Theme Switch
+            document.body.className = 'theme-' + profile;
 
-    <tr>
-        <td>12:00 – 12:50</td>
-        <td>Microprocessors & MicroControllers (22EC1120)</td>
-        <td>Communications & Networking Lab (22EC1125)</td>
-        <td>LUNCH</td>
-        <td>MPMC / Microwave Lab</td>
-        <td>Skill Oriented Course-IV (Soft Skills Lab)</td>
-    </tr>
+            // Toggle Buttons
+            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + profile).classList.add('active');
 
-    <tr>
-        <td>12:50 – 01:40</td>
-        <td>Constitution of India (22HM11Z2)</td>
-        <td>Lab Continued</td>
-        <td>Microprocessors & MicroControllers (22EC1120)</td>
-        <td>Lab Continued</td>
-        <td>Lab Continued</td>
-    </tr>
+            // Swap Table Body
+            document.querySelectorAll('.schedule-body').forEach(tbody => tbody.classList.remove('active-view'));
+            document.getElementById('schedule-' + profile).classList.add('active-view');
 
-    <tr>
-        <td>01:40 – 02:30</td>
-        <td>Library / Counselling</td>
-        <td>Lab Continued</td>
-        <td>Open Elective-II</td>
-        <td>Open Elective-II</td>
-        <td>Open Elective-II</td>
-    </tr>
+            // Swap Headers
+            document.getElementById('time-headers').innerHTML = headers[profile];
+        }
 
-    <tr>
-        <td>02:30 – 03:20</td>
-        <td>Sports</td>
-        <td>Professional Elective-II*</td>
-        <td>Open Elective-II</td>
-        <td>Open Elective-II</td>
-        <td>Open Elective-II</td>
-    </tr>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedProfile = localStorage.getItem('timetableProfileV4') || 'omega';
+            setProfile(savedProfile);
 
-    <tr class="honors">
-        <td>03:20 – 04:10</td>
-        <td>Honors: Low Power VLSI Design</td>
-        <td>Honors: Low Power VLSI Design</td>
-        <td>Honors: Low Power VLSI Design</td>
-        <td>Honors: Low Power VLSI Design</td>
-        <td>Honors: VLSI Physical Design (MOOCs)</td>
-    </tr>
-</table>
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const todayName = days[new Date().getDay()];
+            const dateOptions = { weekday: 'long', month: 'short', day: 'numeric' };
+            document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', dateOptions);
 
+            document.querySelectorAll('tr[data-day]').forEach(row => {
+                if(row.getAttribute('data-day') === todayName) {
+                    row.classList.add('active-day');
+                    if(window.innerWidth < 1000) {
+                        setTimeout(() => row.scrollIntoView({ behavior: 'smooth', block: 'center' }), 250);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
