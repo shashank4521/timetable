@@ -1,109 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>VI Sem ECE – Section III</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <title>VI Sem ECE – Section III Timetable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7efe3;
+      padding: 20px;
+    }
 
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    h2, h3 {
+      text-align: center;
+      margin: 3px 0;
+      font-weight: normal;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+    }
+
+    th, td {
+      border: 2px solid black;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      background: #ffe4c4;
+      font-weight: bold;
+    }
+
+    .lunch {
+      background: #ffc800;
+      font-weight: bold;
+    }
+
+    .honors {
+      background: #ffd1a8;
+      font-weight: bold;
+    }
+
+    .lab {
+      background: #dff0ff;
+      font-weight: bold;
+    }
+
+    .pe {
+      background: #fff0c9;
+    }
+
+    .open {
+      background: #e3f7ff;
+    }
+  </style>
+</head>
 <body>
 
-<h1>VI Sem ECE – Section III</h1>
-<h3>Academic Year: 2025–26</h3>
-<h3>Class Teacher: Mrs. P.R. Sri Satya | w.e.f 08-12-2025</h3>
+  <h1>VI Sem ECE – Section III</h1>
+  <h2>Academic Year: 2025–26</h2>
+  <h3>Class Teacher: Mrs. P.R. Sri Satya | w.e.f. 08-12-2025</h3>
 
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>TIME</th>
-<th>MON</th>
-<th>TUE</th>
-<th>WED</th>
-<th>THU</th>
-<th>FRI</th>
-</tr>
-</thead>
+  <table>
+    <tr>
+      <th>Time Slot</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
 
-<tbody>
+    <tr>
+      <td>08:40 – 09:30</td>
+      <td>Microwave Engineering (22EC1121)</td>
+      <td>Microprocessors & MC (22EC1120)</td>
+      <td class="pe">Professional Elective-II*</td>
+      <td class="pe">Professional Elective-II*</td>
+      <td>Constitution of India (22HM11Z2)</td>
+    </tr>
 
-<tr>
-<td>08:40–09:30</td>
-<td>Microwave</td>
-<td rowspan="3" class="lab">MPMC / CCN Lab</td>
-<td rowspan="3" class="lab">MPMC/MW Lab</td>
-<td>PE-II</td>
-<td>Constitution</td>
-</tr>
+    <tr>
+      <td>09:30 – 10:20</td>
+      <td>Computer Communications & Networking (22EC1122)</td>
+      <td>Computer Communications & Networking (22EC1122)</td>
+      <td class="lab">MPMC / Microwave Lab</td>
+      <td>MPMC (22EC1120)</td>
+      <td>Microwave Engineering (22EC1121)</td>
+    </tr>
 
-<tr>
-<td>09:30–10:20</td>
-<td>CCN</td>
-<td>MPMC</td>
-<td>Microwave</td>
-</tr>
+    <tr>
+      <td>10:20 – 11:10</td>
+      <td class="pe">Professional Elective-II*</td>
+      <td>Microwave Engineering (22EC1121)</td>
+      <td class="lab">Lab Continued</td>
+      <td>Microwave Engineering (22EC1121)</td>
+      <td>Computer Communications & Networking (22EC1122)</td>
+    </tr>
 
-<tr>
-<td>10:20–11:10</td>
-<td>PE-II</td>
-<td>Microwave</td>
-<td>CCN</td>
-</tr>
+    <tr class="lunch">
+      <td>11:10 – 12:00</td>
+      <td colspan="5">LUNCH</td>
+    </tr>
 
-<tr class="lunch">
-<td><b>11:10–12:00</b></td>
-<td colspan="5"><b>LUNCH</b></td>
-</tr>
+    <tr>
+      <td>12:00 – 12:50</td>
+      <td>MPMC (22EC1120)</td>
+      <td class="lab">CCN Lab (22EC1125)</td>
+      <td class="lunch">LUNCH</td>
+      <td class="lab">MPMC / MW Lab</td>
+      <td class="lab">Soft Skills Lab</td>
+    </tr>
 
-<tr>
-<td>12:00–12:50</td>
-<td>MPMC</td>
-<td rowspan="2" class="lab">CCN Lab</td>
-<td>CCN</td>
-<td rowspan="2" class="lab">MPMC/MW Lab</td>
-<td rowspan="3" class="lab">Soft Skills Lab</td>
-</tr>
+    <tr>
+      <td>12:50 – 01:40</td>
+      <td>Constitution of India (22HM11Z2)</td>
+      <td class="lab">Lab Continued</td>
+      <td>MPMC (22EC1120)</td>
+      <td class="lab">Lab Continued</td>
+      <td class="lab">Lab Continued</td>
+    </tr>
 
-<tr>
-<td>12:50–01:40</td>
-<td>Constitution</td>
-<td>MPMC</td>
-</tr>
+    <tr>
+      <td>01:40 – 02:30</td>
+      <td>Library / Counselling</td>
+      <td class="lab">Lab Continued</td>
+      <td class="open">Open Elective-II</td>
+      <td class="open">Open Elective-II</td>
+      <td class="open">Open Elective-II</td>
+    </tr>
 
-<tr>
-<td>01:40–02:30</td>
-<td>Library</td>
-<td>PE-II</td>
-<td>Open Elective-II</td>
-<td>Open Elective-II</td>
-</tr>
+    <tr>
+      <td>02:30 – 03:20</td>
+      <td>Sports</td>
+      <td class="pe">Professional Elective-II*</td>
+      <td class="open">Open Elective-II</td>
+      <td class="open">Open Elective-II</td>
+      <td class="open">Open Elective-II</td>
+    </tr>
 
-<tr>
-<td>02:50–03:20</td>
-<td>Sports</td>
-<td>PE-II</td>
-<td>PE-II</td>
-<td>PE-II</td>
-<td>Open Elective-II</td>
-</tr>
+    <tr class="honors">
+      <td>03:20 – 04:10</td>
+      <td>Honors: Low Power VLSI Design</td>
+      <td>Honors: Low Power VLSI Design</td>
+      <td>Honors: Low Power VLSI Design</td>
+      <td>Honors: Low Power VLSI Design</td>
+      <td>Honors: VLSI Physical Design (MOOCs)</td>
+    </tr>
 
-<tr>
-<td>03:20–04:10</td>
-<td>Honors</td>
-<td>Honors</td>
-<td>Honors</td>
-<td>Honors</td>
-<td>Honors (MOOCs)</td>
-</tr>
+  </table>
 
-</tbody>
-</table>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
+
 
 
 
