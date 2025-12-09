@@ -1,9 +1,6 @@
-// Script disabled to prevent timetable overwrite
-console.log("Timetable is now controlled only by HTML.");
-.today {
-  background: #b9ffd0 !important;
-  font-weight: bold;
-  box-shadow: inset 0 0 0 3px #00b84a;
-}
+// Timetable is now fully controlled by static HTML.
+// This file is intentionally kept minimal to avoid overwriting the table.
+
+console.log("✅ script.js loaded: Timetable is controlled only by index.html.");
 
 
