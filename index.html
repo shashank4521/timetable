@@ -1,129 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>VI Sem ECE - Section III Timetable</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<tr>
+  <td>12:00 – 12:50</td>
+  <td>🧠 MPMC</td>
+  <td>🔬 CCN Lab</td>
+  <td>LUNCH</td>
+  <td>🔬 MW / MPMC Lab</td>
+  <td>🎤 Soft Skills Lab</td>
+</tr>
 
-  <style>
-    .today {
-      background: #b6ffb6 !important;
-      border: 3px solid #000;
-      font-weight: bold;
-    }
-  </style>
+<tr>
+  <td>12:50 – 01:40</td>
+  <td>📜 Constitution</td>
+  <td>🔬 Lab Continued</td>
+  <td>🧠 MPMC</td>
+  <td>🔬 Lab Continued</td>
+  <td>🎤 Soft Skills Lab</td>
+</tr>
 
-  <script>
-    window.onload = () => {
-      const days = ["sun","mon","tue","wed","thu","fri","sat"];
-      const today = days[new Date().getDay()];
-      const el = document.getElementById(today);
-      if (el) el.classList.add("today");
-    };
-  </script>
-</head>
-<body>
+<tr>
+  <td>01:40 – 02:30</td>
+  <td>📚 Library / Counselling</td>
+  <td>🔬 Lab Continued</td>
+  <td>📝 Open Elective-II</td>
+  <td>🔬 Lab Continued</td>
+  <td>🎤 Soft Skills Lab</td>
+</tr>
 
-<h1>VI Sem ECE – Section III</h1>
-<h3>Academic Year: 2025–26</h3>
-<h4>Class Teacher: Mrs. P.R. Sri Satya | w.e.f. 08-12-2025</h4>
+<tr>
+  <td>02:30 – 03:20</td>
+  <td>⚽ Sports</td>
+  <td>🧩 Professional Elective-II</td>
+  <td>📝 Open Elective-II</td>
+  <td>📝 Open Elective-II</td>
+  <td>📝 Open Elective-II</td>
+</tr>
 
-<table>
-  <tr>
-    <th>Time</th>
-    <th id="mon">Monday</th>
-    <th id="tue">Tuesday</th>
-    <th id="wed">Wednesday</th>
-    <th id="thu">Thursday</th>
-    <th id="fri">Friday</th>
-  </tr>
-
-  <tr>
-    <td>08:40 – 09:30</td>
-    <td>📡 Microwave Engineering</td>
-    <td>🧠 MPMC</td>
-    <td>🎛️ PE-II</td>
-    <td>🎛️ PE-II</td>
-    <td>📜 Constitution</td>
-  </tr>
-
-  <tr>
-    <td>09:30 – 10:20</td>
-    <td>🌐 CCN</td>
-    <td>🌐 CCN</td>
-    <td>🔧 MPMC / MW Lab</td>
-    <td>🧠 MPMC</td>
-    <td>📡 Microwave</td>
-  </tr>
-
-  <tr>
-    <td>10:20 – 11:10</td>
-    <td>🎛️ PE-II</td>
-    <td>📡 Microwave</td>
-    <td>🔧 Lab Continued</td>
-    <td>📡 Microwave</td>
-    <td>🌐 CCN</td>
-  </tr>
-
-  <tr class="lunch">
-    <td>11:10 – 12:00</td>
-    <td>🍴 LUNCH</td>
-    <td>🍴 LUNCH</td>
-    <td>🔧 Lab Continued</td>
-    <td>🍴 LUNCH</td>
-    <td>🍴 LUNCH</td>
-  </tr>
-
-  <tr>
-    <td>12:00 – 12:50</td>
-    <td>🧠 MPMC</td>
-    <td>📡 Communication Lab</td>
-    <td>🍴 LUNCH</td>
-    <td>🔧 MW / MPMC Lab</td>
-    <td>🗣️ Soft Skills Lab</td>
-  </tr>
-
-  <!-- ✅ Wednesday after lunch FIXED -->
-  <tr>
-    <td>12:50 – 01:40</td>
-    <td>📜 Constitution</td>
-    <td>📡 Communication Lab</td>
-    <td>🌐 CCN</td>
-    <td>🔧 Lab Continued</td>
-    <td>🗣️ Soft Skills Lab</td>
-  </tr>
-
-  <tr>
-    <td>01:40 – 02:30</td>
-    <td>📚 Library / Counselling</td>
-    <td>📡 Communication Lab</td>
-    <td>🧠 MPMC</td>
-    <td>📝 Open Elective-II</td>
-    <td>📝 Open Elective-II</td>
-  </tr>
-
-  <tr>
-    <td>02:30 – 03:20</td>
-    <td>⚽ Sports</td>
-    <td>🎛️ PE-II</td>
-    <td>📝 Open Elective-II</td>
-    <td>📝 Open Elective-II</td>
-    <td>📝 Open Elective-II</td>
-  </tr>
-
-  <tr class="honors">
-    <td>03:20 – 04:10</td>
-    <td>🏆 Honors – Low Power VLSI</td>
-    <td>🏆 Honors – Low Power VLSI</td>
-    <td>🏆 Honors – Low Power VLSI</td>
-    <td>🏆 Honors – Low Power VLSI</td>
-    <td>🎓 Honors – VLSI (MOOCs)</td>
-  </tr>
-</table>
-
-</body>
-</html>
+<tr class="honors">
+  <td>03:20 – 04:10</td>
+  <td>🏆 Honors – Low Power VLSI</td>
+  <td>🏆 Honors – Low Power VLSI</td>
+  <td>🏆 Honors – Low Power VLSI</td>
+  <td>🏆 Honors – Low Power VLSI</td>
+  <td>🎓 Honors – VLSI (MOOCs)</td>
+</tr>
 
 
 
